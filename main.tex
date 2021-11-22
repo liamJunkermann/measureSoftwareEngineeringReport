@@ -17,7 +17,7 @@
 \usepackage[colorlinks=true, linkcolor=Black, urlcolor=Black]{hyperref}
 
 \textwidth=6.5in
-\linespread{1.0} % Line spacing
+\linespread{1.5} % Line spacing
 \renewcommand{\familydefault}{\sfdefault}
 
 \newcommand{\includecode}[4]{\lstinputlisting[float,floatplacement=H, caption={[#1]#2}, captionpos=b, frame=single, label={#3}]{#4}}
@@ -53,20 +53,6 @@
 \definecolor{light-gray}{gray}{0.95}
 \newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
 
-%%------------------------------------------------
-%% Parameters
-%%------------------------------------------------
-% Set up the header and footer
-\pagestyle{fancy}
-\lhead{\authorName} % Top left header
-\chead{\moduleCode\ - \assignmentTitle} % Top center header
-\rhead{\firstxmark} % Top right header
-\lfoot{\lastxmark} % Bottom left footer
-\cfoot{} % Bottom center footer
-\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
-\renewcommand\headrulewidth{0.4pt} % Size of the header rule
-\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
-
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 \newcommand{\assignmentTitle}{Measuring Software Engineering Report}
 \newcommand{\moduleCode}{CSU330312} 
@@ -74,6 +60,22 @@
 \newcommand{\authorName}{Liam Junkermann} 
 \newcommand{\authorID}{19300141} 
 \newcommand{\reportDate}{\today}
+
+%%------------------------------------------------
+%% Parameters
+%%------------------------------------------------
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\authorName} % Top left header
+\chead{\moduleCode\ - \assignmentTitle} % Top center header
+% \rhead{\firstxmark} % Top right header
+\rhead{\authorID}
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
 
 \title{
     \vspace{-1in}
@@ -108,6 +110,12 @@
         Software engineering is a notoriously difficult to track for time and productivity. Some engineers may be more efficient with some technologies and not others, and tasks may have varying difficulty making engineering activity and productivity particularly difficult to accurately and consistently track productivity. This report will discuss various ways engineering activity can be measured, appropriate data collected, and finally processed to accurately profile engineers. In addition, the moral, ethical, and legal consequences of these methods will be explored.
     \end{abstract}
     \section{How to measure engineering activity}
+        There are a number of metrics which can be used to determine engineering activity depending on the way a given repository or organisation is set up. 
+        \begin{description}
+            \item[Commits and code frequency] The simplest way to track engineering productivity could be based on the commit and code frequency charts provided by most version control providers. These charts allow a supervisor, or even the engineer themselves, to see the number of commits they make over a period of time, as well as the number of lines added or removed from the files within the repository. This method of measuring engineering activity is rudimentary and does not account for tasks which may take more time to research, plan, or structure -- all subtasks which would not be reflected in a simple commit or code frequency chart. 
+            \item[Pull Request creation or review frequency] Version control is used to allow many people to work on a project together at the same time. Organisations will use pull requests to combine the work of various engineers in order to begin the production pipeline (the flow within which the code is built and packaged for release to production or testing groups). While commit frequency and volume are important to track activity, and break down tasks, ultimately contribution to production environments is what dictates success and progress. Pull requests are the measure for those production contributions, they allow the engineer who has worked on a feature or task to share that work with their team, and allows the rest of the team to make comments about the functionality or approach used to solve the problem presented in the task or feature. It is important, for both the team and the product they are working on, that the new features sent to the production pipeline will work and solve the problem stated. Tracking engineering activity through pull requests is an effective way to track both individual engineering contributions to a production product, and the contributions from other team members through the code review process. 
+            \item[] 
+        \end{description}
     \section{Connecting and performing Calculations on Activity Data sets}
     \section{Computation to profile software engineers}
     \section{Morality, Ethics, and Legality of Collecting and processing engineer measurement}
