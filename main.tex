@@ -72,7 +72,8 @@
 \rhead{\authorID}
 \lfoot{\lastxmark} % Bottom left footer
 \cfoot{} % Bottom center footer
-\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+% \rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\rfoot{\thepage}
 \renewcommand\headrulewidth{0.4pt} % Size of the header rule
 \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
@@ -96,6 +97,8 @@
 \date{}
 \author{}
 
+\setcounter{secnumdepth}{1}
+
 \renewcommand{\abstractname}{Introduction}
 
 \begin{document}
@@ -109,13 +112,12 @@
     \begin{abstract}
         Software engineering is a notoriously difficult to track for time and productivity. Some engineers may be more efficient with some technologies and not others, and tasks may have varying difficulty making engineering activity and productivity particularly difficult to accurately and consistently track productivity. This report will discuss various ways engineering activity can be measured, appropriate data collected, and finally processed to accurately profile engineers. In addition, the moral, ethical, and legal consequences of these methods will be explored.
     \end{abstract}
-    \section{How to measure engineering activity}
-        There are a number of metrics which can be used to determine engineering activity depending on the way a given repository or organisation is set up. 
-        \begin{description}
-            \item[Commits and code frequency] The simplest way to track engineering productivity could be based on the commit and code frequency charts provided by most version control providers. These charts allow a supervisor, or even the engineer themselves, to see the number of commits they make over a period of time, as well as the number of lines added or removed from the files within the repository. This method of measuring engineering activity is rudimentary and does not account for tasks which may take more time to research, plan, or structure -- all subtasks which would not be reflected in a simple commit or code frequency chart. 
-            \item[Pull Request creation or review frequency] Version control is used to allow many people to work on a project together at the same time. Organisations will use pull requests to combine the work of various engineers in order to begin the production pipeline (the flow within which the code is built and packaged for release to production or testing groups). While commit frequency and volume are important to track activity, and break down tasks, ultimately contribution to production environments is what dictates success and progress. Pull requests are the measure for those production contributions, they allow the engineer who has worked on a feature or task to share that work with their team, and allows the rest of the team to make comments about the functionality or approach used to solve the problem presented in the task or feature. It is important, for both the team and the product they are working on, that the new features sent to the production pipeline will work and solve the problem stated. Tracking engineering activity through pull requests is an effective way to track both individual engineering contributions to a production product, and the contributions from other team members through the code review process. 
-            \item[] 
-        \end{description}
+    \section{Measurable Data}
+        There are a number of metrics which can be used to determine engineering activity depending on the way a given repository or organisation is set up.
+        \subsection{Commits and code frequency} The simplest way to track engineering productivity could be based on the commit and code frequency charts provided by most version control providers. These charts allow a supervisor, or even the engineer themselves, to see the number of commits they make over a period of time, as well as the number of lines added or removed from the files within the repository. This method of measuring engineering activity is rudimentary and does not account for tasks which may take more time to research, plan, or structure -- all subtasks which would not be reflected in a simple commit or code frequency chart. 
+        \subsection{Pull Request creation or review frequency} Version control is used to allow many people to work on a project together at the same time. Organisations will use pull requests to combine the work of various engineers in order to begin the production pipeline (the flow within which the code is built and packaged for release to production or testing groups). While commit frequency and volume are important to track activity, and break down tasks, ultimately contribution to production environments is what dictates success and progress. Pull requests are the measure for those production contributions, they allow the engineer who has worked on a feature or task to share that work with their team, and allows the rest of the team to make comments about the functionality or approach used to solve the problem presented in the task or feature. It is important, for both the team and the product they are working on, that the new features sent to the production pipeline will work and solve the problem stated. Tracking engineering activity through pull requests is an effective way to track both individual engineering contributions to a production product, and the contributions from other team members through the code review process. 
+        \subsection{Task and time tracking systems} One of the more effective and holistic ways to track engineering activity and performance leverages and expands upon the previous two solutions. Using a system like \href{https://www.atlassian.com/software/jira}{JIRA}, \href{https://azure.microsoft.com/en-us/services/devops/}{Azure Dev Ops (ADO)} or even certain functions of \href{https://github.com}{Github} allow teams to track tasks that need to be completed and track progress through tasks broken down to different degrees of complexity, as well as link progress with commits and completed pull requests. This method of measuring engineering performance allows progress on tasks to be tracked in reference with actual effort and hours of work put into a given task or subtask. This also allows the management of the team to improve as time estimation becomes more accurate with iterations of using this kind of solution.
+        \subsection{Testing Coverage} An important part of any project which looks to see a production environment is the testability and rigorous testing to ensure that the solution can run effectively in that production environment. Any solutions a developer writes must be tested, and many production pipelines provide engineers graphs or statistics about code coverage -- as in which lines of code were tested and which were not. These statistics allow engineers to catch bugs and ensure their solutions is being tested appropriately.
     \section{Connecting and performing Calculations on Activity Data sets}
     \section{Computation to profile software engineers}
     \section{Morality, Ethics, and Legality of Collecting and processing engineer measurement}

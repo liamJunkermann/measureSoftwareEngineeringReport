@@ -19,6 +19,8 @@
 *.snm
 *.synctex
 *.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
 *.nav
 *.vrb
 *.dvi
